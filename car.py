@@ -1,14 +1,15 @@
 from dataclasses import dataclass
 
-from engine.willoughby_engine import WilloughbyEngine
-from engine.sternman_engine import SternmanEngine
 from engine.capulet_engine import CapuletEngine
+from engine.sternman_engine import SternmanEngine
+from engine.willoughby_engine import WilloughbyEngine
+
 
 @dataclass
 class Car(Serviceable):
     __engine: Engine
     __battery: Battery
-    __components: field(init=False)
+    __components: field(init=False, repr=False)
 
     def __post_init__(self):
         __components = [

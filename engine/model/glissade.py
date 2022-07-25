@@ -1,12 +1,5 @@
-from datetime import datetime
-
-from engine.willoughby_engine import WilloughbyEngine
+from car import CarFactory
 
 
-class Glissade(WilloughbyEngine):
-    def needs_service(self):
-        service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 2)
-        if service_threshold_date < datetime.today().date() or self.engine_should_be_serviced():
-            return True
-        else:
-            return False
+def Glissade(*params):
+    return CarFactory.create_glissade(*params)
