@@ -1,6 +1,4 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
-
 
 class CarComponent(ABC):
     pass
@@ -14,6 +12,9 @@ class Serviceable(CarComponent):
         pass
 
 
-@dataclass
 class Engine(Serviceable):
+    pass
+
+
+class Tire(Serviceable):
     pass
