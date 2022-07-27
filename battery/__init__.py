@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from engine import Serviceable
+from abstract_components import Serviceable
 
 
 class Battery(Serviceable):
