@@ -1,12 +1,17 @@
+from dataclasses import dataclass
+from datetime import datetime
+
 from engine import Serviceable
 
 
-@dataclass
 class Battery(Serviceable):
     pass
 
 
-class Spindler(Battery):
+@dataclass
+class SpindlerBattery(Battery):
+    last_service_date: object
+
     def needs_service(self):
         service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 3)
         if service_threshold_date < datetime.today().date():
@@ -14,5 +19,9 @@ class Spindler(Battery):
         return False
 
 
-class Nubbin(Battery):
-    pass
+@dataclass
+class NubbinBattery(Battery):
+    warning_light_is_on: bool
+
+    def needs_service(self) -> bool:
+        return self.warning_light_is_on

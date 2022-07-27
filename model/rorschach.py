@@ -1,5 +1,5 @@
 from car import CarFactory
 
 
-def Rorshach(*params):
+def Rorschach(*params):
     return CarFactory.create_rorschach(*params)

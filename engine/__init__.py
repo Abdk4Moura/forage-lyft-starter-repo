@@ -1,7 +1,12 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 
 
-class Serviceable(ABC):
+class CarComponent(ABC):
+    pass
+
+
+class Serviceable(CarComponent):
     """Represents object that must be serviced at some point in time"""
 
     @abstractmethod
