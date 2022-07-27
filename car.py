@@ -27,7 +27,11 @@ class Car(Serviceable):
 
 class CarFactory:
     @staticmethod
-    def create_calliope(last_service_date, current_mileage, last_service_mileage):
+    def create_calliope(*params):
+        (last_service_date,
+         current_mileage,
+         last_service_mileage
+         ) = params
         engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = SpindlerBattery(last_service_date)
         car = Car(engine, battery)
